@@ -10,4 +10,4 @@ Currently OpenMathInstruct-1 and 2 are the datasets in mind due to their (relati
 Provided heat death of the universe does not occur first, the model's performance will be benchmarked against MATH and GSM8K.
 
 
-USAGE: As mentioned, I am broke, so I don't have much compute to handle this kind of experiment on a regular basis. Anyone who somehow comes past this repo is free to use its training code and ideas (and fix my monkey fixed tuning code and modelling). However, please let me know if you do use it as I'd love to see how it turns out!
+USAGE: As mentioned, I don't have much compute to handle this kind of experiment on a regular basis. Anyone who somehow comes past this repo is free to use its training code and ideas (and fix my monkey fixed tuning code and modelling). However, please let me know if you do use it as I'd love to see how it turns out!

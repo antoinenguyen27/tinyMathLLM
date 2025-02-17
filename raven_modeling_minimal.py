@@ -223,6 +223,9 @@ class CausalSelfAttention(torch.nn.Module):
         past_key_values: Optional[Cache] = None,
         return_attn: bool = False,
     ) -> tuple[Tensor, Optional[Tensor]]:
+        
+        
+
         B, S, E = x.shape  # batch size, sequence length, embedding dimensionality (n_embd)
         q, k, v = self.Wqkv(x).split(self.chunks, dim=2)
         q = q.view(B, S, self.n_head, self.head_dim)
@@ -241,6 +244,16 @@ class CausalSelfAttention(torch.nn.Module):
 
         if past_key_values is not None:
             k, v = past_key_values.update(k, v, step_idx)
+
+
+
+            # Fix: adjust the attention mask shape if needed.
+        if mask is not None:
+            # If mask is of shape [B, key_length], expand it to [B, 1, 1, key_length]
+            if mask.dim() == 2:
+                mask = mask.unsqueeze(1).unsqueeze(1)
+             # Ensure the mask's dtype matches q's dtype
+            mask = mask.to(dtype=q.dtype)
 
         if return_attn:
             y, attention_map = self.compute_eager_sdpa(q, k, v, attn_mask=mask)
@@ -946,11 +959,20 @@ class RavenForCausalLM(RavenPreTrainedModel, GenerationMixin):
         return stats
     
 
+    # def get_input_embeddings(self):
+    #     return self.lm_head
+
+    # def set_input_embeddings(self, value):
+    #     self.lm_head = value
+
+
     def get_input_embeddings(self):
-        return self.lm_head
+        return self.transformer.wte
 
     def set_input_embeddings(self, value):
-        self.lm_head = value
+        self.transformer.wte = value
+        if self.config.tie_embeddings:
+            self.lm_head.weight = self.transformer.wte.weight
 
 
 #################################### Utils #######################################################################

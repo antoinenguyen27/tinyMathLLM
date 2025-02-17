@@ -11,3 +11,18 @@ Provided heat death of the universe does not occur first, the model's performanc
 
 
 USAGE: As mentioned, I don't have much compute to handle this kind of experiment on a regular basis. Anyone who somehow comes past this repo is free to use its training code and ideas (and fix my monkey fixed tuning code and modelling). However, please let me know if you do use it as I'd love to see how it turns out!
+
+Links to works mentioned:
+
+1. Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach:
+  https://www.arxiv.org/pdf/2502.05171
+
+2. DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning: https://arxiv.org/pdf/2501.12948
+
+3. OpenMathInstruct-1: A 1.8 Million Math Instruction Tuning Dataset: https://arxiv.org/pdf/2402.10176
+
+4. OpenMathInstruct-2: Accelerating AI for Math with Massive Open-Source Instruction Data https://arxiv.org/pdf/2410.01560
+
+5. Jiayi Pan TinyZero: https://github.com/Jiayi-Pan/TinyZero/tree/main
+
+

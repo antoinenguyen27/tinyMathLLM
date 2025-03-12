@@ -1,4 +1,4 @@
-# tinyMathLLM (Product on pause due to lack of compute)
+# tinyMathLLM (Project on pause due to lack of compute)
 An experiment to see how far I can push latent space reasoning and CoT via RL in tiny (and quantized!) models by finetuning on math datasets. This experiment utilises huginn-125, the 3.5B parameter latent space reasoning model introduced in the paper "Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach" (Geiping, Jonas, et al.). It also draws great inspiration from the yet to be published works from Jiayi Pan of UC Berkeley and the work done by the Deepseak team on Deepseak-R1-Zero. 
 
 The current stage of this experiment is modifying the modelling.py file of huginn-125 to make it compatible with my fine tuning process, which will involve QLoRA. huginn-125 was not trained with quantizing in mind, however I am broke and would like to train it on cloud as cheaply as possible.

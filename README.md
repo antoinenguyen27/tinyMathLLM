@@ -3,7 +3,9 @@ An experiment to see how far I can push latent space reasoning and CoT via RL in
 
 The current stage of this experiment is modifying the modelling.py file of huginn-125 to make it compatible with my fine tuning process, which will involve QLoRA. huginn-125 was not trained with quantizing in mind, however I am broke and would like to train it on cloud as cheaply as possible.
 
-I will not be surprised if this goes absolutely nowhere, however I wanted to try regardless for the learning experience. 
+I
+
+I will not be surprised if this goes absolutely nowhere **(especially given quantizing and recurrent layers don't mix)**, however I wanted to try regardless for the learning experience. 
 
 Currently OpenMathInstruct-1 and 2 are the datasets in mind due to their (relatively) smaller size. However given my available compute, updates to this repo will be very slow and have little scientific validity (since I can't do many trials or controls).
 
